@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bottler.Pages;
 using Xamarin.Forms;
 
 namespace Bottler
@@ -21,8 +22,11 @@ namespace Bottler
         }
         private async void Button_Clicked_goto_testpage(object sender, EventArgs e)
         {
-
             await Navigation.PushAsync(new Testpage());
         }
+		private async void Button_Clicked_goto_newInventory(object sender, EventArgs e)
+		{
+            await Navigation.PushAsync(new Locations());
+		}
     }
 }

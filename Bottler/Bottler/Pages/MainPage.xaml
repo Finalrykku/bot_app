@@ -1,11 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Bottler"
              x:Class="Bottler.MainPage">
 
-    <StackLayout BackgroundColor="GreenYellow">
+    <StackLayout BackgroundColor="White">
         <Entry x:Name="Options" BackgroundColor="Gray" TextColor="White"/>
+        <Button BackgroundColor="Blue" TextColor="White" Text="LOL" Clicked="Button_Clicked_goto_newInventory"/>
         <Button BackgroundColor="Green" TextColor="White" Text="LOL" Clicked="Button_Clicked_goto_options"/>
         <Button BackgroundColor="Green" TextColor="White" Text="Testpage" Clicked="Button_Clicked_goto_testpage"/>
         <Label Text="Welcome to Xamarin Forms!" 

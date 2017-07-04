@@ -7,6 +7,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using XLabs.Ioc;
+using XLabs.Forms;
+
 namespace Bottler.Droid
 {
     [Activity(Label = "Bottler", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]

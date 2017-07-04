@@ -7,6 +7,7 @@
     <StackLayout BackgroundColor="GreenYellow">
         <Entry x:Name="Options" BackgroundColor="Gray" TextColor="White"/>
         <Button BackgroundColor="Green" TextColor="White" Text="LOL" Clicked="Button_Clicked_goto_options"/>
+        <Button BackgroundColor="Green" TextColor="White" Text="Testpage" Clicked="Button_Clicked_goto_testpage"/>
         <Label Text="Welcome to Xamarin Forms!" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />

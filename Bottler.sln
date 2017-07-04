@@ -11,6 +11,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bottler.UWP", "Bottler\Bott
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bottler.iOS", "Bottler\Bottler.iOS\Bottler.iOS.csproj", "{88549119-13B9-4295-8DBC-6D828818BD9F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "´Vorlagen", "´Vorlagen", "{D4DEDA0B-E252-4689-8EC1-5219A7382C13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Popups", "Popups", "{E499FA29-363D-42CD-94FD-3D44EC650873}"
+	ProjectSection(SolutionItems) = preProject
+		Bottler\Bottler\Popups_vorlagencode\FirstPopupPage.xaml = Bottler\Bottler\Popups_vorlagencode\FirstPopupPage.xaml
+		Bottler\Bottler\Popups_vorlagencode\FirstPopupPage.xaml.cs = Bottler\Bottler\Popups_vorlagencode\FirstPopupPage.xaml.cs
+		Bottler\Bottler\Popups_vorlagencode\ListViewPage.xaml = Bottler\Bottler\Popups_vorlagencode\ListViewPage.xaml
+		Bottler\Bottler\Popups_vorlagencode\ListViewPage.xaml.cs = Bottler\Bottler\Popups_vorlagencode\ListViewPage.xaml.cs
+		Bottler\Bottler\Popups_vorlagencode\LoadingPopupPage.xaml = Bottler\Bottler\Popups_vorlagencode\LoadingPopupPage.xaml
+		Bottler\Bottler\Popups_vorlagencode\LoadingPopupPage.xaml.cs = Bottler\Bottler\Popups_vorlagencode\LoadingPopupPage.xaml.cs
+		Bottler\Bottler\Popups_vorlagencode\LoginPopupPage.xaml = Bottler\Bottler\Popups_vorlagencode\LoginPopupPage.xaml
+		Bottler\Bottler\Popups_vorlagencode\LoginPopupPage.xaml.cs = Bottler\Bottler\Popups_vorlagencode\LoginPopupPage.xaml.cs
+		Bottler\Bottler\Popups_vorlagencode\LoginSuccessPopupPage.xaml = Bottler\Bottler\Popups_vorlagencode\LoginSuccessPopupPage.xaml
+		Bottler\Bottler\Popups_vorlagencode\LoginSuccessPopupPage.xaml.cs = Bottler\Bottler\Popups_vorlagencode\LoginSuccessPopupPage.xaml.cs
+		Bottler\Bottler\Popups_vorlagencode\MainPage.xaml = Bottler\Bottler\Popups_vorlagencode\MainPage.xaml
+		Bottler\Bottler\Popups_vorlagencode\MainPage.xaml.cs = Bottler\Bottler\Popups_vorlagencode\MainPage.xaml.cs
+		Bottler\Bottler\Popups_vorlagencode\SystemOffsetPage.xaml = Bottler\Bottler\Popups_vorlagencode\SystemOffsetPage.xaml
+		Bottler\Bottler\Popups_vorlagencode\SystemOffsetPage.xaml.cs = Bottler\Bottler\Popups_vorlagencode\SystemOffsetPage.xaml.cs
+		Bottler\Bottler\Popups_vorlagencode\UserAnimationPage.xaml = Bottler\Bottler\Popups_vorlagencode\UserAnimationPage.xaml
+		Bottler\Bottler\Popups_vorlagencode\UserAnimationPage.xaml.cs = Bottler\Bottler\Popups_vorlagencode\UserAnimationPage.xaml.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -254,6 +276,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E499FA29-363D-42CD-94FD-3D44EC650873} = {D4DEDA0B-E252-4689-8EC1-5219A7382C13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .

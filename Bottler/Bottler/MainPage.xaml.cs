@@ -19,6 +19,10 @@ namespace Bottler
 
             await Navigation.PushAsync(new Page_Options(Options.Text));
         }
+        private async void Button_Clicked_goto_testpage(object sender, EventArgs e)
+        {
 
+            await Navigation.PushAsync(new Testpage());
+        }
     }
 }

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-
+/*
+ * Contains a stocktaking session
+ * 
+ */
 /*
  * vars:
  * 
@@ -24,14 +27,18 @@ namespace Bottler
         private bool sessionFinished;
         public int SessionFinishedTime { get; private set; }
 
-        /*
-         * Adding a new bottle to the current stocktaking
-         */
+        
+        // Adding a new bottle to the current stocktaking
         public void new_bootle(UInt64 i_ean, String i_name, bool i_full, int i_volume)
         {
             bottles.Add(new Bottle(i_ean,  i_name,  i_full, i_volume));
         }
 
+        // Remove a bottle
+        public void remove_bottle(Bottle i_bottle)
+        {
+            bottles.Remove(i_bottle);
+        }
 
     }
 }

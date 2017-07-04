@@ -5,6 +5,10 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+
+using XLabs.Ioc;
+using XLabs.Forms;
+
 namespace Bottler.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 

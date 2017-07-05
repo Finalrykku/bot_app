@@ -13,7 +13,7 @@ namespace Bottler.Pages
         {
             InitializeComponent();
             Location q = new Location("o");
-            AppState.myLocations();
+            AppState._instance.myLocations();
             getLocations();
             /*
 			listView.ItemsSource = new List<string>
@@ -31,7 +31,7 @@ namespace Bottler.Pages
         public void getLocations() 
         {
             List<String> loc_list = new List<String>();
-            foreach (Location location in AppState.Locations ) 
+            foreach (Location location in AppState._instance.Locations ) 
             {
                 loc_list.Add(location.name);
                 foreach(String entry in getLocationRecursive(location))

@@ -4,18 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * Singleton instance for storing something appwide
+ */
 namespace Bottler
 {
-    public static class AppState
+    class AppState
     {
-        public static List<Location> Locations { get; private set; }
+        public static readonly AppState _instance = new AppState();
 
-        public static void AddLocation(Location i_location)
+        AppState()
+        {
+            Locations = new List<Location>();
+        }
+
+        public List<Location> Locations;// { get; private set; }
+
+        public  void AddLocation(Location i_location)
         {
             Locations.Add(i_location);
         }
 
-        public static void myLocations()
+        public  void myLocations()
         {
             Location q = new Location("oooo");
 			Locations.Add(q);
@@ -24,7 +34,7 @@ namespace Bottler
             Locations[0].addSubLocation(new Location("sub0"));
 		}
 
-        public static int Blub() 
+        public  int Blub() 
         {
             return 1;
         }

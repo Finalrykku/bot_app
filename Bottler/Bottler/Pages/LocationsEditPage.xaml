@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Bottler.Pages.LocationsEditPage">
+	<ContentPage.Content>
+        <StackLayout>
+            <Label Text="Locations" VerticalOptions="Start" HorizontalOptions="Center"/>
+            <Label Text="Hinweis: Um Locations zu bearbeiten oder zu löschen bitte den Onlinezugang nutzen." VerticalOptions="Start" HorizontalOptions="Center" />
+            <Label x:Name="ona" />
+            <Button Text="Neue Location" HorizontalOptions="CenterAndExpand" Clicked="AddLocation_clicked"/>
+            <StackLayout VerticalOptions="Fill">
+                <ListView x:Name="listView" VerticalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                             <TextCell x:Name="listview_item" TextColor="{Binding TextColor}" Text="{Binding name}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <Label />
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>
+
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

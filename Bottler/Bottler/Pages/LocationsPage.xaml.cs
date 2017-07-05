@@ -11,48 +11,90 @@ namespace Bottler.Pages
     {
         public Locations()
         {
-            InitializeComponent();
-            Location q = new Location("o");
-            AppState._instance.myLocations();
-            getLocations();
             /*
-			listView.ItemsSource = new List<string>
+			var personDataTemplate = new DataTemplate(() =>
 			{
-				"Test ListView1",
-				"Test ListView2",
-				"Test ListView3",
-				"Test ListView4",
-				"Test ListView5",
+                var grid = new Grid();
+                var textcell = new TextCell();
 
-			};*/
-			//listView.ItemTapped += ListView_ItemTapped;
+                textcell.SetBinding(TextCell.TextProperty, "name");
+                textcell.SetBinding(TextCell.TextColorProperty, "TextColor");
+
+                grid.Children.Add(textcell);
+                return new ViewCell { View = grid };
+			});
+*/
+            InitializeComponent();
+
+            //getLocations();
+
+			listView.ItemTapped += delegate (object sender, ItemTappedEventArgs e)
+            {
+                ListView_ItemTapped(sender, e);
+            };
         }
 
+		/*
+         * The list will be refreshed every time on Appearing
+         */
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			getLocations();
+		}
+        /*
+         * Event, when a item gets selected
+         */
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e) 
+        {
+            ///e.Item; // selected
+        }
+
+		/*
+         * Retrieve the locations being saved in Appstate
+         */
         public void getLocations() 
         {
-            List<String> loc_list = new List<String>();
+
+            List<Location> loc_list = new List<Bottler.Location>();
             foreach (Location location in AppState._instance.Locations ) 
             {
-                loc_list.Add(location.name);
-                foreach(String entry in getLocationRecursive(location))
+                loc_list.Add(location);
+                foreach(Location entry in getLocationRecursive(location))
                 {
                     loc_list.Add(entry);
                 }
             }
-            listView.ItemsSource = loc_list;
+
+            if (loc_list.Count != 0) 
+            {
+                listView.ItemsSource = loc_list;
+ 
+            }
+            /*
+             * TODO: something, when the list is still empty
+             */
         }
-        private List<String> getLocationRecursive(Location i_locations)
+        private List<Location> getLocationRecursive(Location i_locations)
         {
-			List<String> loc_list = new List<String>();
-            foreach (Location location in i_locations.subLocations)
-			{
-				loc_list.Add(location.name);
-				foreach (String entry in getLocationRecursive(location))
+            List<Location> loc_list = new List<Location>();
+            if (i_locations.subLocations != null) 
+            {
+				foreach (Location location in i_locations.subLocations)
 				{
-					loc_list.Add(entry);
+					loc_list.Add(location);
+                    foreach (Location entry in getLocationRecursive(location))
+					{
+						loc_list.Add(entry);
+					}
 				}
-			}
+            }
             return loc_list;
+		}
+
+		private async void AddLocation_clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new LocationAdd());
 		}
 
     }

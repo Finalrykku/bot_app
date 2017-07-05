@@ -1,12 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Bottler.Page_Options">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="push1" VerticalOptions="Start" HorizontalOptions="Center"  />
             <Label Text="Options" VerticalOptions="Start" HorizontalOptions="Center" />
-            <Button x:Name="Button_back" Text="Zurück" BackgroundColor="AliceBlue" Clicked="Button_back_Clicked"/>
+            <Label x:Name="licenseKey" VerticalOptions="Start" HorizontalOptions="Center" />
+            
+            <Button x:Name="licenseKeyButton" Text="Lizenzkey ändern" Clicked="Changekey_clicked"/>
+            <Button Text="Locations hinzufügen" Clicked="Location_clicked"/>
+            <Button x:Name="Button_back" Text="Speichern und zurück" BackgroundColor="AliceBlue" Clicked="Button_back_Clicked"/>
             
         </StackLayout>
     </ContentPage.Content>

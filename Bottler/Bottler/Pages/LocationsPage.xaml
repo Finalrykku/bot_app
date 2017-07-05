@@ -2,20 +2,26 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:local="clr-namespace:Bottler.Pages;assembly=Bottler.Pages"
     x:Class="Bottler.Pages.Locations">
     
     <StackLayout BackgroundColor="White">
-        <Entry x:Name="Location" BackgroundColor="Gray" TextColor="White"/>
 
-        <Label Text="Welcome to Xamarin Forms!" 
+        <Label Text="Location auswählen" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
-        <ListView x:Name="listView">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                     <TextCell x:Name="item" TextColor="Black" Text="{Binding .}"></TextCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <StackLayout VerticalOptions="Fill">
+            <ListView x:Name="listView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                         <TextCell x:Name="listview_item" TextColor="{Binding TextColor}" Text="{Binding name}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+                        <Label />
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+        <Button Text="Neue Location" HorizontalOptions="CenterAndExpand" Clicked="AddLocation_clicked"/>
     </StackLayout>
 </ContentPage>

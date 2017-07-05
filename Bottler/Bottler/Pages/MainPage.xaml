@@ -6,8 +6,10 @@
 
     <StackLayout BackgroundColor="White">
         <Entry x:Name="Options" BackgroundColor="Gray" TextColor="White"/>
-        <Button BackgroundColor="Blue" TextColor="White" Text="LOL" Clicked="Button_Clicked_goto_newInventory"/>
-        <Button BackgroundColor="Green" TextColor="White" Text="LOL" Clicked="Button_Clicked_goto_options"/>
+        <Button BackgroundColor="Blue" TextColor="White" Text="Neue Inventur" Clicked="Button_Clicked_goto_newInventory"/>
+        <Button BackgroundColor="Green" TextColor="White" Text="Inventur fortsetzen" IsVisible="false"/>
+        <Button BackgroundColor="Green" TextColor="White" Text="Aktuelle Inventur" IsVisible="false"/>
+        <Button BackgroundColor="Green" TextColor="White" Text="Optionen" Clicked="Button_Clicked_goto_options"/>
         <Button BackgroundColor="Green" TextColor="White" Text="Testpage" Clicked="Button_Clicked_goto_testpage"/>
         <Label Text="Welcome to Xamarin Forms!" 
            VerticalOptions="Center" 

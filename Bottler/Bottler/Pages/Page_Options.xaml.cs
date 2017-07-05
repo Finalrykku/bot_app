@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Bottler.Pages;
 
 namespace Bottler
 {
@@ -15,12 +16,20 @@ namespace Bottler
         public Page_Options(string param)
         {
             InitializeComponent();
-            push1.Text = param;
         }
 
-        private async void Button_back_Clicked(object sender, EventArgs e)
+		private async void Button_back_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PopAsync();
+		}
+		private async void Location_clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new LocationsEditPage());
+		}
+        // TODO
+        private async void Changekey_clicked(object sender, EventArgs e) 
         {
-            await Navigation.PopAsync();
+			var answer = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
         }
     }
 }

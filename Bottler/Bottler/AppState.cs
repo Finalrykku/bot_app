@@ -16,16 +16,24 @@ namespace Bottler
         AppState()
         {
             Locations = new List<Location>();
+            myLocations();
         }
 
-        public List<Location> Locations;// { get; private set; }
+        public List<Location> Locations { get; private set; }
+        public Stocktaking CurrentSession { get; private set; }
 
-        public  void AddLocation(Location i_location)
+        /*
+         * Add a new location
+         */
+        public void AddLocation(Location i_location)
         {
             Locations.Add(i_location);
         }
 
-        public  void myLocations()
+        /*
+         * Debug random locations
+         */
+        public void myLocations()
         {
             Location q = new Location("oooo");
 			Locations.Add(q);
@@ -34,9 +42,5 @@ namespace Bottler
             Locations[0].addSubLocation(new Location("sub0"));
 		}
 
-        public  int Blub() 
-        {
-            return 1;
-        }
     }
 }

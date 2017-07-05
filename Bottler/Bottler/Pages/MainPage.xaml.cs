@@ -22,8 +22,8 @@ namespace Bottler
         }
         private async void Button_Clicked_goto_testpage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Testpage());
-        }
+			await Navigation.PushAsync(new Testpage());
+		}
 		private async void Button_Clicked_goto_newInventory(object sender, EventArgs e)
 		{
             await Navigation.PushAsync(new Locations());

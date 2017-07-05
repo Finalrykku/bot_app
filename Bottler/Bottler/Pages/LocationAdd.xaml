@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Bottler.Pages.LocationAdd">
+	<ContentPage.Content>
+        <StackLayout>
+            <Label Text="Name der Location" FontSize="Large"/>
+            <Label x:Name="loc_status" Text=""/>
+            <Entry x:Name="loc_name" Text="Locationname"/>
+            <Label Text="Ist eine Oberkategorie"/>
+
+            <Picker x:Name="picker_locations" HorizontalOptions="FillAndExpand" Title="Oberkategorie auswählen" ItemDisplayBinding="{Binding name}">
+            </Picker>
+            <StackLayout Orientation="Horizontal" Spacing="0"> 
+                <Label x:Name="ToggleLabel" Text="Fungiert als Location" FontSize="Large" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                <Switch  HorizontalOptions="End"  Toggled="SwitchToggled" VerticalOptions="Center" />
+            </StackLayout>
+            <Button Text="Erstellen" Clicked="Add_Clicked"/>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

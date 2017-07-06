@@ -11,11 +11,11 @@ namespace Bottler
             full = i_full;
             volume = i_volume;
         }
-        private UInt64 EAN { get; set; }
-        private String name { get; set; }
+        public UInt64 EAN { get; private set; }
+        public String name { get; private set; }
         // public String location { get; set; }
-        private bool full;
-        private int volume { get; set; }
+        public bool full;
+        public int volume { get; set; }
 
         /*k
          * 

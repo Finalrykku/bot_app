@@ -22,6 +22,8 @@ namespace Bottler
             /*
              * TODO: sessionstartedtime, sessionid
              */
+            sessionStartedTime = 1;
+            sessionId = 1;
         }
 
         public int sessionId { get; set; }
@@ -46,6 +48,10 @@ namespace Bottler
         public void new_bootle(UInt64 i_ean, String i_name, bool i_full, int i_volume)
         {
             bottles.Add(new Bottle(i_ean,  i_name,  i_full, i_volume));
+        }
+        public void new_bootle(Bottle bottle)
+        {
+            bottles.Add(bottle);
         }
 
         // Remove a bottle

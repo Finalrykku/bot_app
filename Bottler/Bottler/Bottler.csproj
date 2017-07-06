@@ -64,6 +64,9 @@
     <Compile Include="Pages\LocationAdd.xaml.cs">
       <DependentUpon>LocationAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\StocktakingCurrent.xaml.cs">
+      <DependentUpon>StocktakingCurrent.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -89,6 +92,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\LocationAdd.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\StocktakingCurrent.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

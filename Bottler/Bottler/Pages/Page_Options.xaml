@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Bottler.Page_Options">
+             x:Class="Bottler.Page_Options"
+    Title="Optionen">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Options" VerticalOptions="Start" HorizontalOptions="Center" />
+            <!--Label Text="Options" VerticalOptions="Start" HorizontalOptions="Center" /-->
             <Label x:Name="licenseKey" VerticalOptions="Start" HorizontalOptions="Center" />
             
             <Button x:Name="licenseKeyButton" Text="Lizenzkey ändern" Clicked="Changekey_clicked"/>

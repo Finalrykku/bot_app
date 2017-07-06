@@ -16,7 +16,7 @@ namespace Bottler
         AppState()
         {
             Locations = new List<Location>();
-            myLocations();
+            addDebugStuff();
         }
 
         public List<Location> Locations { get; private set; }
@@ -33,14 +33,21 @@ namespace Bottler
         /*
          * Debug random locations
          */
-        public void myLocations()
+        private void addDebugStuff()
         {
-            Location q = new Location("oooo");
-			Locations.Add(q);
+            
+            Locations.Add(new Location("gruppe1", true));
 			Locations.Add(new Location("loc1"));
 			Locations.Add(new Location("loc2"));
-            Locations[0].addSubLocation(new Location("sub0"));
+            Locations[0].addSubLocation(new Location("subloc0"));
+
+            CurrentSession = new Stocktaking(Locations[1]);
+
+            CurrentSession.new_bootle(1, "flascheA", true, 1);
+            CurrentSession.new_bootle(12, "flascheB", true, 1);
+            CurrentSession.new_bootle(134, "flascheC", false, 1);
 		}
+
 
     }
 }

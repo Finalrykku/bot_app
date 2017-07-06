@@ -3,13 +3,11 @@
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:local="clr-namespace:Bottler.Pages;assembly=Bottler.Pages"
-    x:Class="Bottler.Pages.Locations">
+    x:Class="Bottler.Pages.Locations"
+    Title="Location auswählen">
     
     <StackLayout BackgroundColor="White">
 
-        <Label Text="Location auswählen" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
         <StackLayout VerticalOptions="Fill">
             <ListView x:Name="listView">
                 <ListView.ItemTemplate>

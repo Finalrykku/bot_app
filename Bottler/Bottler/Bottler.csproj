@@ -70,6 +70,9 @@
     <Compile Include="Pages\BottleEdit.xaml.cs">
       <DependentUpon>BottleEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Stocktaking.xaml.cs">
+      <DependentUpon>Stocktaking.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -101,6 +104,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\BottleEdit.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Stocktaking.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

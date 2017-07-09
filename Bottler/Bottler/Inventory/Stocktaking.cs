@@ -30,7 +30,9 @@ namespace Bottler
         public Location location { get; private set; }
         public bool locationIsSet { get; private set; }
 
-        private List<Bottle> bottles = new List<Bottle>();
+        public List<Bottle> bottles = new List<Bottle>();
+        // Every Bottle in a stocktaking needs a different id
+        private int BottleId = 0;
         public int sessionStartedTime { get; private set; }
         public bool sessionFinished;
         public int SessionFinishedTime { get; private set; }
@@ -41,17 +43,41 @@ namespace Bottler
                 location = i_location;
                 locationIsSet = true;
             }
-                
         }
 
         // Adding a new bottle to the current stocktaking
-        public void new_bootle(UInt64 i_ean, String i_name, bool i_full, int i_volume)
+        public void new_bootle(UInt64 i_ean, String i_name, bool i_full, int i_volume, int i_count)
         {
-            bottles.Add(new Bottle(i_ean,  i_name,  i_full, i_volume));
+            bottles.Add(new Bottle(BottleId, i_ean, i_name, i_full, i_volume, i_count));
+            BottleId += 1;
         }
-        public void new_bootle(Bottle bottle)
+		public void new_bootle(UInt64 i_ean, String i_name, bool i_full, int i_volume)
+		{
+			bottles.Add(new Bottle(BottleId, i_ean, i_name, i_full, i_volume));
+            BottleId += 1;
+		}
+        /*public void new_bootle(Bottle bottle)
         {
             bottles.Add(bottle);
+        }*/
+
+        /// <summary>
+        /// Saves the bottle.
+        /// TODO: optimization
+        /// </summary>
+        /// <param name="i_bottle">bottle to save</param>
+        public void save_bottle(Bottle i_bottle)
+        {
+            int i = 0;
+            foreach (Bottle bottle in bottles)
+            {
+                if (bottle.id == i_bottle.id)
+                {
+                    bottles[i] = i_bottle;
+                    return;
+                }
+                i += 1;
+            }
         }
 
         // Remove a bottle

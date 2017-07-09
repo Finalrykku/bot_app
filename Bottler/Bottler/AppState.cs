@@ -30,6 +30,11 @@ namespace Bottler
             Locations.Add(i_location);
         }
 
+        public void saveBottle(Bottle i_bottle)
+        {
+            
+        }
+
         /*
          * Debug random locations
          */
@@ -43,8 +48,8 @@ namespace Bottler
 
             CurrentSession = new Stocktaking(Locations[1]);
 
-            CurrentSession.new_bootle(1, "flascheA", true, 1);
-            CurrentSession.new_bootle(12, "flascheB", true, 1);
+            CurrentSession.new_bootle(1, "flascheA", true, 1,5);
+            CurrentSession.new_bootle(12, "flascheB", true, 1,3);
             CurrentSession.new_bootle(134, "flascheC", false, 1);
 		}
 

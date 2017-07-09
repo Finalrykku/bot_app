@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Bottler.Pages.BottleEdit">
+    <ContentPage.Resources>
+    <ResourceDictionary>
+      <OnPlatform x:Key="boxSize"
+                  x:TypeArguments="x:Double"
+                  iOS="50"
+                  Android="50"
+                  WinPhone="75" />
+
+      <!-- This is only an issue on the iPhone; Android and 
+           WinPhone auto size the row height to the contents. -->
+      <OnPlatform x:Key="rowHeight" 
+                  x:TypeArguments="x:Int32"
+                  iOS="60"
+                  Android="60"
+                  WinPhone="85" />
+      
+    </ResourceDictionary>
+  </ContentPage.Resources>
+	<ContentPage.Content>
+        <StackLayout Padding="15, 0, 15, 0">
+            <StackLayout Orientation="Horizontal">
+                <BoxView WidthRequest="{StaticResource boxSize}"
+                           HeightRequest="{StaticResource boxSize}"
+                           Color="Black" />
+
+                <StackLayout Padding="5, 0, 0, 0" VerticalOptions="Center">
+                    <Label x:Name="BottleName" Text="{Binding name}"
+                           Font="Bold, Medium" />
+                    <Label x:Name="BottleEAN" Text="{Binding EAN}" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout x:Name="OptionFullBottle" IsVisible="false">
+                <!--StackLayout Orientation="Horizontal" Spacing="0"> 
+                    <Label x:Name="ToggleLabel" Text="Voll" FontSize="Large" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                    <Switch x:Name="FullToggle" HorizontalOptions="End" Toggled="SwitchToggled" VerticalOptions="Center" />
+                </StackLayout-->
+
+                <StackLayout Orientation="Horizontal" Spacing="0" > 
+                    <Label Text="Anzahl" FontSize="Large" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+                    <Picker x:Name="picker_count" HorizontalOptions="FillAndExpand" Title="Anzahl"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout x:Name="OptionIndividualBottle" IsVisible="false">
+
+            </StackLayout>
+            
+            <Button Text="Fertigstellen" Clicked="Clicked_Finished"/>
+        </StackLayout>    
+    </ContentPage.Content>
+</ContentPage>

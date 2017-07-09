@@ -25,7 +25,8 @@
     
   <ContentPage.Content>
   <ListView x:Name="StocktakingListview"
-            RowHeight="{StaticResource rowHeight}">
+            RowHeight="{StaticResource rowHeight}"
+            ><!--IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}" IsRefreshing="{Binding isRefreshing}"-->
     <ListView.ItemTemplate>
       <DataTemplate>
         <ViewCell>
@@ -49,6 +50,8 @@
                   <Label Text="{Binding EAN} " />
                   <Label Text=" Volume: "/>
                   <Label Text="{Binding volume}" />
+                  <Label Text=" Anzahl: "/>
+                  <Label Text="{Binding count}"/>
 
                 </StackLayout>
               </StackLayout>

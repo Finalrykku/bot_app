@@ -11,7 +11,7 @@ namespace Bottler.Pages
     {
         public Locations()
         {
-            /*
+            /* farben ausprobiert
 			var personDataTemplate = new DataTemplate(() =>
 			{
                 var grid = new Grid();
@@ -48,7 +48,12 @@ namespace Bottler.Pages
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e) 
         {
             ///e.Item; // selected
+            Start_Stocktaking(sender,e);
         }
+		private async void Start_Stocktaking(object sender, EventArgs e)
+		{
+            await Navigation.PushAsync(new Stocktaking());
+		}
 
 		/*
          * Retrieve the locations being saved in Appstate

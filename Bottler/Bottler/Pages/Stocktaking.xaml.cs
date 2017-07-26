@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Plugin.Media;
 using Xamarin.Forms;
+using Bottler;
+using System.IO;
 
 
 namespace Bottler.Pages
@@ -15,42 +17,23 @@ namespace Bottler.Pages
         {
             InitializeComponent();
 
-            Camera_button_takepic.Clicked += async (sender, e) =>
-            {
-                await CrossMedia.Current.Initialize();
-
-                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-                {
-                    DisplayAlert("No Camera", "no cam biatch", "ok");
-                    return;
-                }
-                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions()
-                {
-                    Directory = "ample",
-                    Name = "test.jpg"
-                });
-                if (file == null)
-                    return;
-
-                await DisplayAlert("file location", file.Path, "ok");
-
-
-                cam_image.Source = ImageSource.FromStream(() =>
-                {
-                    var stream = file.GetStream();
-                    file.Dispose();
-                    return stream;
-                });
-            };
-
-
+            TakePhotoButton.Clicked += TakePhotoButton_Clicked;
 
         }
-
-
-        void Handle_Clicked(object sender, System.EventArgs e)
+        async void TakePhotoButton_Clicked(object sender, System.EventArgs e)
         {
-            throw new NotImplementedException();
+            var cameraPage = new CameraPage();
+            cameraPage.OnPhotoResult += CameraPage_OnPhotoResult;
+            await Navigation.PushModalAsync(cameraPage);
+        }
+
+        async void CameraPage_OnPhotoResult(PhotoResultEventArgs result)
+        {
+            await Navigation.PopModalAsync();
+            if (!result.Success)
+                return;
+
+            Photo.Source = ImageSource.FromStream(() => new MemoryStream(result.Image));
         }
     }
 }

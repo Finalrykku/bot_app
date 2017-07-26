@@ -53,7 +53,8 @@ namespace Bottler.Pages
 		private async void Start_Stocktaking(object sender, EventArgs e)
 		{
             await Navigation.PushAsync(new Stocktaking());
-		}
+//            await Navigation.PushModalAsync(new CameraPage());
+        }
 
 		/*
          * Retrieve the locations being saved in Appstate

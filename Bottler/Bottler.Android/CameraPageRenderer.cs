@@ -7,7 +7,7 @@ using Android.Widget;
 using Android.Content;
 using Bottler;
 using System.Linq;
-using Android.Hardware;
+//using Android.Hardware;
 using System.Threading.Tasks;
 using Bottler.Droid;
 
@@ -16,6 +16,7 @@ namespace Bottler.Droid
 {
     public class CameraPageRenderer : PageRenderer, TextureView.ISurfaceTextureListener
     {
+        RelativeLayout topLayout;
         RelativeLayout mainLayout;
         TextureView liveView;
         PaintCodeButton capturePhotoButton;
@@ -23,6 +24,8 @@ namespace Bottler.Droid
         Android.Hardware.Camera camera;
 
         Activity Activity => this.Context as Activity;
+
+        byte[] outimageBytes = null;
 
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Page> e)
         {
@@ -33,6 +36,8 @@ namespace Bottler.Droid
 
         void SetupUserInterface()
         {
+            topLayout = new RelativeLayout(Context);
+
             mainLayout = new RelativeLayout(Context);
 
             //RelativeLayout.LayoutParams mainLayoutParams = new RelativeLayout.LayoutParams(
@@ -48,6 +53,7 @@ namespace Bottler.Droid
             liveView.LayoutParameters = liveViewParams;
             mainLayout.AddView(liveView);
 
+
             capturePhotoButton = new PaintCodeButton(Context);
             RelativeLayout.LayoutParams captureButtonParams = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WrapContent,
@@ -56,6 +62,7 @@ namespace Bottler.Droid
             captureButtonParams.Width = 120;
             capturePhotoButton.LayoutParameters = captureButtonParams;
             mainLayout.AddView(capturePhotoButton);
+
 
             AddView(mainLayout);
         }
@@ -96,7 +103,7 @@ namespace Bottler.Droid
 
         public async Task<byte[]> TakePhoto()
         {
-            camera.StopPreview();
+            //camera.StopPreview();
             var ratio = ((decimal)Height) / Width;
             var image = Bitmap.CreateBitmap(liveView.Bitmap, 0, 0, liveView.Bitmap.Width, (int)(liveView.Bitmap.Width * ratio));
             byte[] imageBytes = null;
@@ -106,9 +113,26 @@ namespace Bottler.Droid
                 image.Recycle();
                 imageBytes = imageStream.ToArray();
             }
-            camera.StartPreview();
+            //camera.StartPreview();
             return imageBytes;
         }
+
+		public async void TakePhoto2()
+		{
+			camera.StopPreview();
+			var ratio = ((decimal)Height) / Width;
+			var image = Bitmap.CreateBitmap(liveView.Bitmap, 0, 0, liveView.Bitmap.Width, (int)(liveView.Bitmap.Width * ratio));
+			byte[] imageBytes = null;
+			using (var imageStream = new System.IO.MemoryStream())
+			{
+				await image.CompressAsync(Bitmap.CompressFormat.Jpeg, 50, imageStream);
+				image.Recycle();
+				imageBytes = imageStream.ToArray();
+			}
+			camera.StartPreview();
+            outimageBytes = imageBytes;
+		}
+
 
         private void StopCamera()
         {
@@ -127,6 +151,7 @@ namespace Bottler.Droid
 
         public void OnSurfaceTextureAvailable(SurfaceTexture surface, int width, int height)
         {
+            
             camera = Android.Hardware.Camera.Open();
             var parameters = camera.GetParameters();
             var aspect = ((decimal)height) / ((decimal)width);

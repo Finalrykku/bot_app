@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 
 /*
@@ -22,6 +23,8 @@ namespace Bottler
 
         public List<Location> Locations { get; private set; }
         public Stocktaking CurrentSession { get; private set; }
+
+        public ImageSource lastphoto;
 
         /*
          * Add a new location

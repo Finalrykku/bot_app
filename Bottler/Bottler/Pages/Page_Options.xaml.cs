@@ -13,7 +13,7 @@ namespace Bottler
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page_Options : ContentPage
     {
-        public Page_Options(string param)
+        public Page_Options()
         {
             InitializeComponent();
         }

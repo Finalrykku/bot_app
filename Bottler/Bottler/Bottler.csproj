@@ -74,6 +74,12 @@
     <Compile Include="Pages\Stocktaking.xaml.cs">
       <DependentUpon>Stocktaking.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\StocktakingCamera.xaml.cs">
+      <DependentUpon>StocktakingCamera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\picview.xaml.cs">
+      <DependentUpon>picview.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
@@ -108,6 +114,12 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Stocktaking.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\StocktakingCamera.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\picview.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

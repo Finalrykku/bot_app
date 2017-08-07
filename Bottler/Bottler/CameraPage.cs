@@ -21,6 +21,7 @@ namespace Bottler
             OnPhotoResult?.Invoke(new PhotoResultEventArgs());
         }
 
+
     }
 
     public class PhotoResultEventArgs : EventArgs

@@ -5,12 +5,12 @@
              x:Class="Bottler.MainPage">
 
     <StackLayout BackgroundColor="White">
-        <Entry x:Name="Options" BackgroundColor="Gray" TextColor="White"/>
         <Button BackgroundColor="Blue" TextColor="White" Text="Neue Inventur" Clicked="Button_Clicked_goto_newInventory"/>
         <Button x:Name="StocktContinue" BackgroundColor="Green" TextColor="White" Text="Inventur fortsetzen" IsVisible="false"/>
         <Button x:Name="StocktCurrent" BackgroundColor="Green" TextColor="White" Text="Aktuelle Inventur" IsVisible="false" Clicked="Button_Clicked_goto_currentStocktaking"/>
         <Button BackgroundColor="Green" TextColor="White" Text="Optionen" Clicked="Button_Clicked_goto_options"/>
         <Button BackgroundColor="Green" TextColor="White" Text="Testpage" Clicked="Button_Clicked_goto_testpage"/>
+        <Button BackgroundColor="Green" TextColor="White" Text="Picview" Clicked="Button_Clicked_goto_Picview"/>
         <Label Text="Welcome to Xamarin Forms!" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />

@@ -44,7 +44,7 @@ namespace Bottler
          */
         private async void Button_Clicked_goto_options(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Page_Options(Options.Text));
+            await Navigation.PushAsync(new Page_Options());
         }
         private async void Button_Clicked_goto_testpage(object sender, EventArgs e)
         {
@@ -58,6 +58,10 @@ namespace Bottler
 		private async void Button_Clicked_goto_currentStocktaking(object sender, EventArgs e)
 		{
             await Navigation.PushAsync(new StocktakingCurrent());
+		}
+		private async void Button_Clicked_goto_Picview(object sender, EventArgs e)
+		{
+            await Navigation.PushAsync(new picview());
 		}
     }
 }
